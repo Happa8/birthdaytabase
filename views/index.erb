@@ -1,0 +1,114 @@
+<% unless @today == [] then %> 
+
+<div class="panel panel-default container">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Happy Birthday!!</div>
+ <div class="panel-body">
+    <p>今日が誕生日のキャラクター!</p>
+    
+    <p class="celebrate">Happy Birthday!! <img src="/img/cake.png" style="width:100px;height:100px;"></p>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <th>名前</th>
+        <th>誕生日</th>
+        <th>タグ</th>
+        <th>スター</th>
+        <th></th>
+    </tr>
+      <% @today.each do |content| %>
+      <tr>
+          <td class="cell name"><a href="/character/<%=content.id%>"><%=content.name%></a></td>
+          <td class="cell date"><script>wd("<%=content.date%>")</script></td>
+          <td class="cell tag"></td>
+          <td class="cell star">
+              <span><%= content.good %></span>
+                <form action="/good/<%= content.id %>" method="post" class="inline-form">
+                    <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-star" />
+                    </button>
+                </form> 
+            </td>
+            <td><!-- シェアボタンに変換される -->
+<a class="twitter-share-button" href="https://twitter.com/share" data-text="#<%=content.name%>生誕祭" data-dnt="true">Tweet</a>
+
+<!-- [head]内や、[body]の終了直前などに配置 -->
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script></td>
+    </tr>
+        <%end%>
+  </table>
+</div>
+<%else%>
+<p class="panel panel-default container no-people">登録されている中で今日が誕生日の人物はいません。</p>
+<%end%>
+
+<div class="panel panel-default container">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Coming soon...</div>
+ <div class="panel-body">
+    <p>一週間以内に誕生日があるキャラクター</p>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <th>名前</th>
+        <th>誕生日</th>
+        <th>タグ</th>
+        <th>スター</th>
+    </tr>
+      <% @within_a_week.each do |content| %>
+      <tr>
+          <td class="cell name"><a href="/character/<%=content.id%>"><%=content.name%></a></td>
+          <td class="cell date"><script>wd("<%=content.date%>")</script></td>
+          <td class="cell tag"></td>
+          <td class="cell star">
+              <span><%= content.good %></span>
+                <form action="/good/<%= content.id %>" method="post" class="inline-form">
+                    <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-star" />
+                    </button>
+                </form> 
+            </td>
+    </tr>
+        <%end%>
+  </table>
+</div>
+
+
+
+
+
+<div class="panel panel-default container">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Hot 50!</div>
+ <div class="panel-body">
+    <p>スターの数が多かった上位50人！</p>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <th>名前</th>
+        <th>誕生日</th>
+        <th>タグ</th>
+        <th>スター</th>
+    </tr>
+      <% @contents.each do |content| %>
+      <tr>
+          <td class="cell name"><a href="/character/<%=content.id%>"><%=content.name%></a></td>
+          <td class="cell date"><script>wd("<%=content.date%>")</script></td>
+          <td class="cell tag"></td>
+          <td class="cell star">
+              <span><%= content.good %></span>
+                <form action="/good/<%= content.id %>" method="post" class="inline-form">
+                    <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-star" />
+                    </button>
+                </form> 
+            </td>
+    </tr>
+        <%end%>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+
+<div class="panel panel-default container">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Search Reslut</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+        <th>名前</th>
+        <th>誕生日</th>
+        <th>タグ</th>
+        <th>スター</th>
+    </tr>
+      <% @contents.each do |content| %>
+      <tr>
+          <td class="cell name"><a href="/character/<%=content.id%>"><%=content.name%></a></td>
+          <td class="cell date"><script>wd("<%=content.date%>")</script></td>
+          <td class="cell tag"></td>
+          <td class="cell star">
+              <span><%= content.good %></span>
+                <form action="/good/<%= content.id %>" method="post" class="inline-form">
+                    <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-star" />
+                    </button>
+                </form> 
+            </td>
+    </tr>
+        <%end%>
+  </table>
+</div>

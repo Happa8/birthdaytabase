@@ -1,0 +1,17 @@
+
+<h1>確認画面</h1>
+<div class="alert alert-info" role="alert">
+<h3>入力内容をご確認ください </h3>
+</div>
+<dl>
+    <dt>名前：</dt><dd><%= @name %></dd>
+    <dt>日付：</dt><dl><%= @date %></dl>
+    <dt>タグ：</dt><dl></dl>
+</dl>
+
+<form action="/exec" method="post">
+<input type="submit" value="送信">
+<span class="label label-danger">
+<a href="/new">キャンセル </a>
+</span>
+</form>

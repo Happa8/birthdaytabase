@@ -1,0 +1,70 @@
+body{
+    background-color: #eee;
+}
+
+iframe {
+    width: auto;
+    height: auto;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.content-item {
+    margin-bottom: 30px;
+}
+                
+.caution {
+    color: red;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.countdown {
+    color: #f77;
+    font-size: 3em;
+}
+
+.countdown > .date{
+    font-size: 5em;
+    color: #333;
+}
+
+.cell.name{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.panel.panel-default.container{
+    max-width: 900px;
+}
+
+.celebrate{
+    color: #f33;
+    font-size: 3em;
+}
+
+.no-people{
+    padding: 10px;
+    box-sizing: border-box;
+}
+.dis-non{
+    display: none;
+}
+
+.ghosticon{
+    border:none;
+    background: none;
+}
+
+.container.character{
+    width:300px;
+    height: 400px;
+    position: absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}

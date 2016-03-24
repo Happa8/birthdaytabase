@@ -1,0 +1,11 @@
+    <form action="/confirm" method="post">
+        <p><label>名前:<input type="text" name="chara_name" value="<%= @content.name %>"></label></p>
+        <p class="caution">ハイフン無し、4ケタで入力してください 例)今日: <script>document.write(m + d);</script></p>
+        <p><label>誕生日:<input type="text" name="date" value="<%= @content.date %>"></label></p>
+        <p><label><input type="hidden" name="operation" value="<%=@operation%>"></label></p>
+        <p><label><input type="hidden" name="id" value="<%=@content.id %> "></label></p>
+        <p><label>タグ：<input type="text" name="tag"></label></p>
+        
+        
+        <p><label><input type="submit" value="完了"></label></p>
+    </form>

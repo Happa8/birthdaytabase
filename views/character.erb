@@ -1,0 +1,29 @@
+
+<div class="container character">
+   <span><%= @content.good %></span>
+    <form action="/good/<%= @content.id %>" method="post" class="inline-form">
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-star" />
+        </button>
+     </form> 
+
+
+            <form action="/edit/<%= @content.id%>" method="post" class="inline-form btnform">
+                <label><button type="submit" value="削除" class="glyphicon glyphicon-pencil ghosticon"></button>  </label>
+            </form>
+            <form action="/delete/<%= @content.id%>" method="post" class="inline-form btnform">
+                <label><button type="submit" value="編集" class="glyphicon glyphicon-trash ghosticon delete"></button></label>
+            </form>
+            <!-- シェアボタンに変換される -->
+<a class="twitter-share-button" href="https://twitter.com/share" data-text="#<%=@content.name%>生誕祭" data-dnt="true">Tweet</a>
+
+<!-- [head]内や、[body]の終了直前などに配置 -->
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+<h2><%= @content.name %></h2>
+<p class="countdown">あと<span class="date"><script>wrd("<%= @content.date %>");</script></span>日</p>
+
+
+            
+</div>
