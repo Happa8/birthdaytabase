@@ -31,6 +31,10 @@ iframe {
     color: #333;
 }
 
+.countdown > .celebrate {
+    font-size:.8em;
+}
+
 .cell.name{
     font-size: 1.3em;
     font-weight: bold;
