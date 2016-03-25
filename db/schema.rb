@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20160323115309) do
 
+  create_table "character_tags", force: :cascade do |t|
+    t.string "chara_id"
+    t.string "tag_id"
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "good",       default: 0
-  end
-
-  create_table "charatags", force: :cascade do |t|
-    t.string "chara_id"
-    t.string "tag_id"
   end
 
   create_table "tags", force: :cascade do |t|

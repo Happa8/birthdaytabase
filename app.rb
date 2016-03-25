@@ -42,7 +42,7 @@ post '/good/:id' do
 end
 
 get '/search' do
-    @contents = Charatag.where("name = ? AND date = ? AND tag= ?",params[:name],params[:date],params[:tag])
+    @contents = Character.where("name = ? AND date = ? AND tags= ?",params[:name],params[:date],params[:tag])
     @search_conditions = ({
         name: params[:name],
         date: params[:date],

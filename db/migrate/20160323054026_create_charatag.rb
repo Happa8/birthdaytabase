@@ -1,6 +1,6 @@
 class CreateCharatag < ActiveRecord::Migration
   def change
-    create_table :charatags do |t|
+    create_table :character_tags do |t|
       t.string :chara_id
       t.string :tag_id
     end
