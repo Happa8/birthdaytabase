@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160323115309) do
 
   create_table "character_tags", force: :cascade do |t|
-    t.string "chara_id"
+    t.string "character_id"
     t.string "tag_id"
   end
 

@@ -16,7 +16,7 @@ end
 
 if CharacterTag.count == 0
     CSV.foreach('resources/csv/Charas_Tags.csv') do |row|
-        CharacterTag.create(:chara_id => row[0], :tag_id => row[1] )
+        CharacterTag.create(:character_id => row[0], :tag_id => row[1] )
     end
 end
 

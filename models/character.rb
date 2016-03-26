@@ -5,8 +5,8 @@ class Character < ActiveRecord::Base
 end
 
 class CharacterTag < ActiveRecord::Base
-    belongs_to :characters
-    belongs_to :tags
+    belongs_to :character
+    belongs_to :tag
 end
 
 class Tag < ActiveRecord::Base

@@ -5,6 +5,14 @@ require 'open-uri'
 require 'sinatra/json'
 require './models/character.rb'
 require 'csv'
+require 'twitter_oauth'
+require 'rubygems'
+require 'sinatra'
+require './tweet.rb'
+
+enable :sessions
+
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 use Rack::Session::Cookie
 
@@ -52,9 +60,15 @@ get '/search' do
     erb :search
 end
 
+get '/tags/:id' do 
+    @contents = Character.includes(:tags).where(tags: {id: params[:id]})
+    @tag = Tag.find(params[:id])
+    erb :search
+end
+
 get '/character/:id' do
     @content = Character.find(params[:id])
-    erb :character
+    erb :charapage
 end
 
 get '/new' do
@@ -131,11 +145,7 @@ post '/renew/:id' do
     redirect '/'
 end
 
-post '/renew/:id' do
-    @content = Character.find(params[:id])
-    @content.update({
-        name: params[:user_name],
-        body: params[:body]
-    })
-    redirect '/'
+get '/tweet' do
+    Tweet.new.daily_tweet
+    "ついーとど！"
 end

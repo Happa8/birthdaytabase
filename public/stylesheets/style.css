@@ -24,10 +24,11 @@ iframe {
 .countdown {
     color: #f77;
     font-size: 3em;
+    min-height: 5em;
 }
 
 .countdown > .date{
-    font-size: 5em;
+    font-size: 3em;
     color: #333;
 }
 
@@ -57,11 +58,6 @@ iframe {
     display: none;
 }
 
-.ghosticon{
-    border:none;
-    background: none;
-}
-
 .container.character{
     width:300px;
     height: 400px;
@@ -71,4 +67,68 @@ iframe {
     bottom:0;
     left:0;
     right:0;
+}
+
+.non-bg{
+    background:none;
+}
+.non-border{
+    border:none; 
+}
+/*
+.cell.name *{
+    font-weight: bold;
+}*/
+
+.page-content{
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.maintable{
+    width: 100%;
+    
+}
+
+.panel{
+    background-color: #fff;
+    padding: 10px;
+     box-sizing: border-box;
+     margin: 10px;
+}
+
+.button-fixed{
+    position: fixed;
+    z-index: 999;
+    bottom: 30px;
+    right: 30px;
+    color:#fff;
+}
+.button-fixed a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.container.center{
+    position: absolute;
+    margin:0 auto;
+    left:0;
+    max-width: 900px;
+    right:0;
+}
+
+.container.middle{
+    position: absolute;
+    margin:auto 0;
+    top:0;
+    max-width: 900px;
+    bottom:0;
+}
+
+a.mdl-layout-title{
+    color: #fff;
+    text-decoration: none
 }

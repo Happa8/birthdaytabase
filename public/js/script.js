@@ -42,7 +42,7 @@ $(function(){
 
 function wrd(date){
     var rd = getRemainDay(date.slice(0,2),date.slice(2));
-    document.write(rd == 365 ? "<span class=\"celebrate\">誕生日は今日です<br>おめでとうございます！</span>" : "あと<span close=\"date\">" + rd + "日");
+    document.write(rd == 365 ? "<span class=\"celebrate\">誕生日は今日です<br>おめでとうございます！</span>" : "あと<span class=\"date\">" + rd + "</span>日");
 }
 
 function wd(date){

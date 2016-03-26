@@ -2,9 +2,13 @@
 <div class="panel panel-default container">
   <!-- Default panel contents -->
   <div class="panel-heading">Search Reslut</div>
+  <div class="panel-body">
+    <p>タグ「<%=@tag.tag%>」の検索結果：</p>
+    <%unless @contents.blank? then%>
+  </div>
 
   <!-- Table -->
-  <table class="table">
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable maintable">
     <tr>
         <th>名前</th>
         <th>誕生日</th>
@@ -19,12 +23,17 @@
           <td class="cell star">
               <span><%= content.good %></span>
                 <form action="/good/<%= content.id %>" method="post" class="inline-form">
-                    <button type="submit" class="btn btn-default">
-                      <span class="glyphicon glyphicon-star" />
-                    </button>
+                    <button type="submit" class="material-icons non-bg non-border">
+          <i class="material-icons">grade</i>
+        </button>
                 </form> 
             </td>
     </tr>
         <%end%>
   </table>
+
+  <%else%>
+  <p>このタグが付けられたキャラクターはいません</p>
+  </div>
+  <%end%>
 </div>

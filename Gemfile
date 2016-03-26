@@ -7,7 +7,9 @@ gem 'sinatra-contrib'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'nokogiri'
-gem 'acts-as-taggable-on'
+gem 'twitter_oauth' 
+gem 'twitter'
+
 group :development do
   gem 'sqlite3'
 end

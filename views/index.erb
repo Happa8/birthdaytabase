@@ -1,6 +1,8 @@
-<% unless @today == [] then %> 
+<div class="container center">
 
-<div class="panel panel-default container">
+<% unless @today.blank? then %> 
+
+<div class="panel panel-default container mdl-shadow--2dp">
   <!-- Default panel contents -->
   <div class="panel-heading">Happy Birthday!!</div>
  <div class="panel-body">
@@ -9,7 +11,8 @@
     <p class="celebrate">Happy Birthday!! <img src="/img/cake.png" style="width:100px;height:100px;"></p>
   </div>
   <!-- Table -->
-  <table class="table">
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable maintable">
+    <thead>
     <tr>
         <th>名前</th>
         <th>誕生日</th>
@@ -17,6 +20,8 @@
         <th>スター</th>
         <th></th>
     </tr>
+    </thead>
+    <tbody>
       <% @today.each do |content| %>
       <tr>
           <td class="cell name"><a href="/character/<%=content.id%>"><%=content.name%></a></td>
@@ -25,9 +30,9 @@
           <td class="cell star">
               <span><%= content.good %></span>
                 <form action="/good/<%= content.id %>" method="post" class="inline-form">
-                    <button type="submit" class="btn btn-default">
-                      <span class="glyphicon glyphicon-star" />
-                    </button>
+                    <button type="submit" class="material-icons non-bg non-border">
+          <i class="material-icons">grade</i>
+        </button>
                 </form> 
             </td>
             <td><!-- シェアボタンに変換される -->
@@ -39,20 +44,21 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 </script></td>
     </tr>
         <%end%>
+        </tbody>
   </table>
 </div>
 <%else%>
-<p class="panel panel-default container no-people">登録されている中で今日が誕生日の人物はいません。</p>
+<p class="panel panel-default container no-people mdl-shadow--2dp">登録されている中で今日が誕生日の人物はいません。</p>
 <%end%>
 
-<div class="panel panel-default container">
+<div class="panel panel-default container mdl-shadow--2dp">
   <!-- Default panel contents -->
   <div class="panel-heading">Coming soon...</div>
  <div class="panel-body">
     <p>一週間以内に誕生日があるキャラクター</p>
   </div>
   <!-- Table -->
-  <table class="table">
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable  maintable">
     <tr>
         <th>名前</th>
         <th>誕生日</th>
@@ -67,9 +73,9 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
           <td class="cell star">
               <span><%= content.good %></span>
                 <form action="/good/<%= content.id %>" method="post" class="inline-form">
-                    <button type="submit" class="btn btn-default">
-                      <span class="glyphicon glyphicon-star" />
-                    </button>
+                    <button type="submit" class="material-icons non-bg non-border">
+          <i class="material-icons">grade</i>
+        </button>
                 </form> 
             </td>
     </tr>
@@ -81,14 +87,14 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
 
 
-<div class="panel panel-default container">
+<div class="panel panel-default container mdl-shadow--2dp">
   <!-- Default panel contents -->
   <div class="panel-heading">Hot 50!</div>
  <div class="panel-body">
     <p>スターの数が多かった上位50人！</p>
   </div>
   <!-- Table -->
-  <table class="table">
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable  maintable">
     <tr>
         <th>名前</th>
         <th>誕生日</th>
@@ -103,9 +109,9 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
           <td class="cell star">
               <span><%= content.good %></span>
                 <form action="/good/<%= content.id %>" method="post" class="inline-form">
-                    <button type="submit" class="btn btn-default">
-                      <span class="glyphicon glyphicon-star" />
-                    </button>
+                    <button type="submit" class="material-icons non-bg non-border">
+          <i class="material-icons">grade</i>
+        </button>
                 </form> 
             </td>
     </tr>
